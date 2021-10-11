@@ -12,6 +12,11 @@
  * Target: Espressif ESP32 dev board, TI MSP432401R
  * Additional Information:  Change the #if macro at the top of this module
  *                          to change which board you're using.
+ * Supply Current Measurements
+ * =============================
+ * State 1: 
+ * State 2: 
+ * State 3:
  */
 
 /* Libraries */
@@ -51,7 +56,7 @@ void loop() {
     button_state    = (Button_State_t)( digitalRead(BUTTON1) ) ;                            // Read button state and type cast read method
     buttonPress     = (button_state_old == BUTTON_OFF) && (button_state == BUTTON_ON) ;     // Flag that detects a button press
     
-    currentMillis = millis() ;
+    currentMillis = millis() ;                                                              // Get the current time
     
     if (buttonPress) {
         debounceButton(currentMillis) ;                                                     // Debounce the button press
