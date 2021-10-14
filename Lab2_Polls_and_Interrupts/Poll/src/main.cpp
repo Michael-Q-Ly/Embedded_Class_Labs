@@ -1,26 +1,23 @@
 /*
-* Name: Michael Ly
-* Date: September 26, 2021
-* Description: Uses an ISR to put the board in one of three modes.
-*              The device boots up into mode 1: the off state (no LEDs lit).
-*              On the depression of a switch on the dev board, the first LED
-*              color should light blue and be steady.
-*              On the depression of a switch a second time, the LED color should
-*              flash with an on time of 50ms and total cycle time of 1 second.
-*              The LED should remain flashing until the switch is depressed
-*              and the system returns to the off state of the state transitions.
-* Target: Espressif ESP32 dev board, TI MSP432401R
-*/
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
- * CURRENT READINGS:
- * WITH no delay()
- *    State 1 (Steady Blue LED):
- *    OFF                          = 63.2 mA
- *    State 1 (Steady Blue LED)    = 63.4 mA
- *    State 2 (Blinking Red LED)   = 63.3 mA
+ * Name: Michael Ly
+ * Date: September 24, 2021
+ * Description: Polls an on-board button. The device boots up into
+ *              the off state (no LEDs lit). On the depression of a switch
+ *              on the dev board, the first LED color should light blue
+ *              and be steady. On the depression of a switch a second time,
+ *              the LED color should flash with an on time of 50ms and total
+ *              cycle time of 1 second. The LED should remain flashing until
+ *              the switch is depressed and the system returns to the off state
+ *              of the state transitions.
+ * Target: Espressif ESP32 dev board, TI MSP432401R
+ * Additional Information:  Change the #if macro at the top of this module
+ *                          to change which board you're using.
+ * Supply Current Measurements
+ * =============================
+ * State 1: 
+ * State 2: 
+ * State 3:
  */
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* Libraries */
 #include "main.h"

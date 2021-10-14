@@ -4,12 +4,12 @@
             "name": "Win32",
             "includePath": [
                 "${default}",
-                "${workspaceFolder}/Lab1/include"
+                "${workspaceFolder}/Lab2_Polls_and_Interrupts/ISR/include"
             ],
             "compilerPath": "C:/MinGW/bin/gcc.exe",
-            "cStandard": "gnu17",
+            "cStandard": "gnu11",
             "cppStandard": "gnu++14",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "windows-gcc-x86"
         }
     ],
     "version": 4

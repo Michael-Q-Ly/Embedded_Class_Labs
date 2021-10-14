@@ -49,26 +49,27 @@
 #endif
 
 /* Constants */
-uint16_t const BUTTON_DEBOUNCE  = 350 ;
+uint16_t const BUTTON_DEBOUNCE  = 500 ;
 uint32_t const BLINK1_DELAY     = 50 ;
 uint32_t const BLINK2_DELAY     = 1000;
 
 /* State Variables */
-static LED_State_t      blueLED2_state ;
-static LED_State_t      blueLED1_state ;
-static LED_State_t      greenLED_state ;
-static LED_State_t      redLED_state ;
+LED_State_t static          blueLED2_state ;
+LED_State_t static          blueLED1_state ;
+LED_State_t static          greenLED_state ;
+LED_State_t static          redLED_state ;
 
-static uint8_t          buttonCount ;
-uint8_t                 buttonPress ;
-uint32_t                currentMillis ;
-uint32_t                previousMillis_Btn ;
-uint32_t                previousMillis_Blink1 ;
-uint32_t                previousMillis_Blink2 ;
+uint8_t static volatile     buttonCount ;
+// Button_t static             buttonCount ;
+
+uint32_t                    currentMillis ;
+uint32_t                    previousMillis_Btn ;
+uint32_t                    previousMillis_Blink1 ;
+uint32_t                    previousMillis_Blink2 ;
 
 /* Function Prototypes */
 void LED_init(void) ;
-void debounceButton(uint32_t currentMillis) ;
+// void debounceButton(uint32_t currentMillis) ;
 void change_to_state1(void) ;
 void change_to_state2(uint32_t currentMillis) ;
 // void IRAM_ATTR ISR_buttonPressed(void) ;
